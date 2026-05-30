@@ -1,0 +1,14 @@
+{
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "*.xlsm": "default",
+        "*.parquet": "duckdb.dataFileViewer",
+        "*.csv": "duckdb.dataFileViewer",
+        "*.tsv": "duckdb.dataFileViewer",
+        "*.xlsx": "duckdb.dataFileViewer",
+        "*.duckdb": "default"
+    },
+    "sqltools.useNodeRuntime": true,
+    "duckdb.defaultDatabase": "memory",
+    "sqltools.connections": []
+}
