@@ -6,7 +6,7 @@
         "*.csv": "duckdb.dataFileViewer",
         "*.tsv": "duckdb.dataFileViewer",
         "*.xlsx": "duckdb.dataFileViewer",
-        "*.duckdb": "default"
+        "*.duckdb": "duckdb.tableViewer"
     },
     "sqltools.useNodeRuntime": true,
     "duckdb.defaultDatabase": "memory",
