@@ -1,0 +1,312 @@
+# 🚚 Supply Chain Analytics Data Warehouse
+
+Supply Chain Analytics platform built using a modern Medallion Architecture (Bronze → Silver → Gold), transforming raw operational data into business-ready datasets for inventory monitoring, sales analysis, and supply chain performance management.
+
+Designed and implemented an end-to-end analytical data pipeline using Python, DuckDB, SQL, and Power BI, covering data ingestion, cleansing, dimensional modeling, KPI generation, and dashboard consumption.
+
+The project simulates a real-world Data Engineering and Analytics Engineering workflow, applying industry best practices for data quality, business modeling, and analytical reporting.
+
+---
+
+# ⚡ TL;DR
+
+📦 Built a complete Supply Chain Data Warehouse
+
+🏗️ Implemented Medallion Architecture (Bronze → Silver → Gold)
+
+🧹 Applied data cleansing and quality controls
+
+📊 Designed dimensional models and analytical fact tables
+
+📈 Created KPI-ready datasets for Power BI dashboards
+
+🗄️ Built using DuckDB, SQL, Python and Pandas
+
+🎯 Focused on inventory, sales, logistics and supply chain analytics
+
+---
+
+# 🎯 Why this project matters
+
+This is not just an ETL exercise.
+
+It simulates a real-world Supply Chain Analytics environment where operational data must be transformed into trusted business information.
+
+The project enables analysis of:
+
+* Inventory availability
+* Product sales performance
+* Inventory exposure
+* Stock movements
+* Supply chain operational efficiency
+* Inventory risk monitoring
+
+The final Gold layer was designed to support executive dashboards and business decision-making.
+
+---
+
+# 🏗️ Architecture
+
+Medallion Architecture:
+
+```text
+Raw Files
+    ↓
+Bronze Layer
+(Raw Data)
+    ↓
+Silver Layer
+(Data Cleansing & Standardization)
+    ↓
+Gold Layer
+(Dimensional Modeling)
+    ↓
+Power BI Dashboard
+```
+
+---
+
+# 🔥 Core Features
+
+## 🥉 Bronze Layer
+
+Raw data ingestion preserving source information.
+
+Tables:
+
+* Inventory Movements
+* Inventory Snapshots
+* Sales Transactions
+* Product Master
+* Location Master
+
+Features:
+
+* Source preservation
+* Historical traceability
+* Minimal transformation
+
+---
+
+## 🥈 Silver Layer
+
+Data quality and standardization layer.
+
+Transformations:
+
+* Text normalization
+* Uppercase standardization
+* Removal of extra spaces
+* Data type conversion
+* Date standardization
+* Multi-format date handling
+
+Supported formats:
+
+```text
+09/01/2026 10:23
+10/11/2026
+2026-01-10
+2026-02-13 09:10
+```
+
+---
+
+## 🥇 Gold Layer
+
+Business-oriented analytical model.
+
+Dimensions:
+
+### Dim Product
+
+* ProductSKU
+* ProductName
+* ProductCategory
+* Brand
+* UnitCost
+
+### Dim Location
+
+* LocationID
+* LocationName
+* LocationType
+* Region
+
+Facts:
+
+### Fact Sales
+
+Sales transactions and commercial metrics.
+
+### Fact Inventory Movements
+
+Inventory flow and logistics operations.
+
+### Fact Inventory Snapshots
+
+Inventory balances over time.
+
+### Fact Inventory Exposure
+
+Weekly aggregated supply chain performance dataset combining:
+
+* Sales
+* Inventory levels
+* Inventory movements
+
+---
+
+# 📊 Supply Chain KPIs
+
+The analytical model supports calculation of:
+
+### Sales KPIs
+
+* Total Revenue
+* Units Sold
+* Average Selling Price
+* Product Performance
+
+### Inventory KPIs
+
+* On-Hand Inventory
+* Inventory Valuation
+* Stock Availability
+* Inventory Coverage
+
+### Supply Chain KPIs
+
+* Inventory Exposure
+* Stockout Risk
+* Inventory Turnover
+* Weeks of Supply
+* Demand vs Inventory
+* Replenishment Effectiveness
+
+---
+
+# 🧪 Data Quality Controls
+
+Implemented several quality assurance mechanisms:
+
+✔ Safe date conversion using TRY_CAST and TRY_STRPTIME
+
+✔ Multiple date format support
+
+✔ Standardized business keys
+
+✔ Null-safe transformations
+
+✔ Text normalization
+
+✔ Consistent dimensional relationships
+
+---
+
+# ⚠️ Real Challenges Solved
+
+### Mixed Date Formats
+
+The source datasets contained multiple date patterns:
+
+```text
+09/01/2026 10:23
+10/11/2026
+2026-01-10
+2026-02-13 09:10
+```
+
+✔ Solved by implementing multi-format parsing logic using:
+
+* TRY_CAST
+* TRY_STRPTIME
+* COALESCE
+
+---
+
+### Data Standardization
+
+Source data contained inconsistencies across:
+
+* SKU identifiers
+* Location identifiers
+* Product descriptions
+
+✔ Solved by implementing standardization rules in the Silver Layer.
+
+---
+
+### Analytical Modeling
+
+Operational datasets were not suitable for reporting.
+
+✔ Solved by creating a dimensional model with:
+
+* Fact tables
+* Dimension tables
+* Business-friendly naming conventions
+
+---
+
+# 🚀 Future Improvements
+
+* Incremental loading strategy
+* Data validation framework
+* Airflow orchestration
+* Automated testing
+* Slowly Changing Dimensions (SCD)
+* Forecasting models using Machine Learning
+* Inventory optimization algorithms
+
+---
+
+# 🛠️ Tech Stack
+
+Data Warehouse: DuckDB
+
+Programming Language: Python
+
+Data Processing: Pandas
+
+Transformation Layer: SQL
+
+Visualization: Power BI
+
+Development Environment: Jupyter Notebook
+
+---
+
+# 📊 What this project demonstrates
+
+✔ Data Engineering fundamentals
+
+✔ ETL/ELT pipeline development
+
+✔ Medallion Architecture implementation
+
+✔ Data Quality and Data Cleansing
+
+✔ Dimensional Modeling
+
+✔ Analytics Engineering concepts
+
+✔ Supply Chain Analytics domain knowledge
+
+✔ Dashboard-ready data preparation
+
+---
+
+# 👨‍💻 Author
+
+Magno Rodrigues
+
+Data Analytics | Data Engineering | Business Intelligence | Process Automation
+
+Transforming raw data into actionable business insights through analytics, automation, and scalable data solutions.
+
+---
+
+# ⭐ Final Note
+
+This project demonstrates how raw operational supply chain data can be transformed into a reliable analytical foundation capable of supporting inventory optimization, sales analysis, KPI monitoring, and business decision-making.
